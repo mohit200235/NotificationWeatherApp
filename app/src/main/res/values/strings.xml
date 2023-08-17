@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NotificationWeatherApp</string>
+    <string name="celcius">&#176;C</string>
+</resources>

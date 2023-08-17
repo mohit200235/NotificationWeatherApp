@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="new_color">#DF4B3C93</color>
+    <color name="new_text_color">#A3023FFA</color>
+    <color name="myColor">#E11A3DF8</color>
+    <color name="forecast_color">#FF5722</color>
+</resources>
