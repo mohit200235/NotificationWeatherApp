@@ -4,30 +4,74 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:src="@drawable/baseline_location_city_24" />
+
+        <TextView
+            android:id="@+id/find_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="8dp"
+            android:text="Current Location"
+            android:textColor="#3366CC"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_open_in_new_24" />
+
+
+        <ProgressBar
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:id="@+id/progress"
+
+            />
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Your Location Here!"
-        android:textSize="18sp"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:paddingStart="10dp"
-        android:textStyle="bold"
-        />
+        android:text="Type location manually!"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
-        >
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/get_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your Location"
-            android:id="@+id/get_location"
-            android:inputType="text"
-            />
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -36,6 +80,6 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="12dp"
         android:text="Submit" />
 </LinearLayout>

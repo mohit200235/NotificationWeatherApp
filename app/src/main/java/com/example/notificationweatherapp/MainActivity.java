@@ -70,11 +70,10 @@ public class MainActivity extends AppCompatActivity implements MyBottomSheetFrag
         today_recyclerView.setLayoutManager(layoutManager);
 
         fab.setOnClickListener(view -> showBottomSheet());
-        getAPIData(currentLocationOnScreen);
 
         srl.setOnRefreshListener(this);
+        getAPIData(currentLocationOnScreen);
     }
-
 
     public void getAPIData(String newLocation) {
         Retrofit retrofit = RetroFitClass.getRetrofitInstance();
@@ -165,6 +164,8 @@ public class MainActivity extends AppCompatActivity implements MyBottomSheetFrag
             @Override
             public void onFailure(Call<NewApiResponse> call, Throwable t) {
                 Log.d("TAG", "error : complete " + t);
+                srl.setRefreshing(false);
+                Toast.makeText(MainActivity.this, "there is an internal issue:", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -183,5 +184,11 @@ public class MainActivity extends AppCompatActivity implements MyBottomSheetFrag
     @Override
     public void onRefresh() {
         getAPIData(currentLocationOnScreen);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        srl.setRefreshing(false);
     }
 }
