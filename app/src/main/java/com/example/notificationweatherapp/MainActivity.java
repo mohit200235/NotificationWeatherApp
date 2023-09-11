@@ -40,7 +40,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements MyBottomSheetFragment.LocationListener,
         SwipeRefreshLayout.OnRefreshListener {
-    private final static String KEY = "c4fe5809a01644fc8fc143943231802";
+    private final static String KEY = "Your_API_KEY";
     NewApiResponse newApiResponse;
     Location location_list;
     SwipeRefreshLayout srl;
